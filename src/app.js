@@ -33,6 +33,8 @@ mongoose.connect(process.env.AZURE_COSMOS_CONNECTIONSTRING)
 .then(() => {
     console.log("MongoDB Connected");
 })
-app.listen(5656,()=>{
-    console.log('server is start..')
-})
+const PORT = process.env.PORT || 5656;
+
+app.listen(PORT, () => {
+    console.log(`Server started on ${PORT}`);
+});
